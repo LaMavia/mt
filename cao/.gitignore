@@ -1,0 +1,6 @@
+pg_data/*
+!pg_data/.gitkeep
+!pg_data/postgresql.conf
+
+sockets/*
+!sockets/.gitkeep

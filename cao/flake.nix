@@ -51,6 +51,7 @@
           # Augment the dynamic linker path
           export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${CPATH}"
           export LIBCLANG_PATH="${pkgs.libclang.lib}/lib";
+          export PGDATA=./pg_data 
         '';
       };
     }
