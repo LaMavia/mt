@@ -1,0 +1,24 @@
+{
+  "name": "cao",
+  "abstract": "[PH] CSA JOP",
+  "description": "[PH] CSV planner",
+  "version": "0.0.1",
+  "maintainer": ["Zuzanna Surowiec"],
+  "license": "postgresql",
+  "provides": {
+    "cao": {
+      "abstract": "A join order search module",
+      "file": "src/cao_main.c",
+      "docfile": "doc/cao.md",
+      "version": "0.0.1"
+    }
+  },
+  "release_status": "unstable",
+  "resources": {},
+  "generated_by": "Zuzanna Surowiec",
+  "meta-spec": {
+    "version": "1.0.0",
+    "url": "http://pgxn.org/meta/spec.txt"
+  },
+  "tags": ["join ordering", "cao", "conformational space annealing"]
+}

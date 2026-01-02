@@ -13,6 +13,6 @@ title("Sample vs Sample1", line = 3)
 sprintf("RF dist: %f", RobinsonFoulds(
                      own_tree,
                      tt_tree,
-                     normalize = TRUE
+                     normalize = FALSE
                      ))
 
