@@ -1,13 +1,14 @@
 {
   inputs = {
     utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
   outputs = { self, nixpkgs, utils }: utils.lib.eachDefaultSystem (system:
     let
       pkgs = nixpkgs.legacyPackages.${system};
       llvm = pkgs.llvmPackages_latest;
       lib = nixpkgs.lib;
-
+      postgres = pkgs.postgresql_18;
     in
     {
       devShell = pkgs.mkShell rec {
@@ -20,7 +21,16 @@
 
           pkgs.gtest
           pkgs.gnumake
-          pkgs.bear
+
+          postgres
+          pkgs.libpq
+          pkgs.libpq.pg_config
+
+          (pkgs.postgresql_18.withPackages
+            (ps: [
+              (ps.callPackage ./cao.nix { })
+            ])
+          )
         ];
 
         buildInputs = [
@@ -30,7 +40,12 @@
         CPATH = builtins.concatStringsSep ":" [
           (lib.makeSearchPathOutput "dev" "include" [ llvm.libcxx ])
           (lib.makeSearchPath "resource-root/include" [ llvm.clang ])
+          (lib.makeSearchPath "include/postgresql/server" [ pkgs.libpq.dev ])
         ];
+        #
+        # makeFlags = [
+        #   "USE_PGXS=1"
+        # ];
 
         shellHook = ''
           # Augment the dynamic linker path

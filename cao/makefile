@@ -29,6 +29,16 @@ ifeq ($(enable_dtrace), yes)
 # OBJS += src/cao_probes.o
 endif
 
+# Check if nix exists, and set PG_CONFIG accordingly
+# IS_NIX := $(shell which nix > /dev/null 2>&1 && echo yes || echo no)
+# ifeq ($(IS_NIX),yes)
+#    PG_CONFIG = ./pg_config_nix.sh
+# else
+#    PG_CONFIG = pg_config
+# endif
+# PGXS := $(shell $(PG_CONFIG) --pgxs)
+# include $(PGXS)
+
 # src/cao.o: src/cao_probes.h
 
 # src/cao_probes.o: src/cao_probes.d
@@ -47,5 +57,5 @@ endif
 # 	sed -f src/Gen_dummy_probes.sed $< >$@
 # endif
 
-PGXS := $(shell $(PG_CONFIG) --pgxs)
-include $(PGXS)
+# PGXS := $(shell $(PG_CONFIG) --pgxs)
+# include $(PGXS)
