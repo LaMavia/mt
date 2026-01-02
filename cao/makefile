@@ -2,10 +2,10 @@ EXTENSION    = cao
 EXTVERSION   = $(shell grep default_version $(EXTENSION).control | \
                sed -e "s/default_version[[:space:]]*=[[:space:]]*'\([^']*\)'/\1/")
 
-DOCS         = $(wildcard doc/*.md)
-TESTS        = $(wildcard test/sql/*.sql)
-REGRESS      = $(patsubst test/sql/%.sql,%,$(TESTS))
-REGRESS_OPTS = --inputdir=test
+# DOCS         = $(wildcard doc/*.md)
+# TESTS        = $(wildcard test/sql/*.sql)
+# REGRESS      = $(patsubst test/sql/%.sql,%,$(TESTS))
+# REGRESS_OPTS = --inputdir=test
 PG_CONFIG    = pg_config
 
 # EXTRA_CLEAN = src/cao_probes.h

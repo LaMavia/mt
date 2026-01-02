@@ -1,4 +1,4 @@
-#include "./cao.h"
+#include "cao.h"
 #include "postgres.h"
 
 #include <limits.h>
@@ -52,24 +52,28 @@ void _PG_init(void) {
   // 						"SA scaling factor for reaching
   // equilibirum.", NULL,
   // &saio_equilibrium_factor, 16, 1, INT_MAX,
-  // PGC_USERSET, 						0, SAIO_GUC_HOOK_VALUES);
+  // PGC_USERSET, 						0,
+  // SAIO_GUC_HOOK_VALUES);
   //
   // DefineCustomRealVariable("saio_initial_temperature_factor",
   // 						 "SA scaling factor for initial
   // temperature.", NULL,
-  // &saio_initial_temperature_factor, 2.0, 0.0, 10.0, 						 PGC_USERSET, 						 0,
+  // &saio_initial_temperature_factor, 2.0, 0.0, 10.0,
+  // PGC_USERSET, 						 0,
   // SAIO_GUC_HOOK_VALUES);
   //
   // DefineCustomRealVariable("saio_temperature_reduction_factor",
   // 						 "SA temperature reduction
   // factor.", NULL,
-  // &saio_temperature_reduction_factor, 0.9, 0.0, 1.0, 						 PGC_USERSET, 						 0,
+  // &saio_temperature_reduction_factor, 0.9, 0.0, 1.0,
+  // PGC_USERSET, 						 0,
   // SAIO_GUC_HOOK_VALUES);
   //
   // DefineCustomIntVariable("saio_moves_before_frozen",
   // 						"SA moves before considering
   // system frozen.", NULL,
-  // &saio_moves_before_frozen, 4, 1, INT_MAX, 						PGC_USERSET, 						0,
+  // &saio_moves_before_frozen, 4, 1, INT_MAX,
+  // PGC_USERSET, 						0,
   // SAIO_GUC_HOOK_VALUES);
   // /* Install hook */
   // prev_join_search_hook = join_search_hook;

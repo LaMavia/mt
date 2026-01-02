@@ -1,7 +1,6 @@
 CompileFlags:
   Add:
     - "-I/nix/store/6hmb2288dkkflzl3kkcl7j5mlhnafyxp-libpq-18.1-dev/include/postgresql/server"
-    - -std=c23
     - -Wall
     - -Wextra
 Compiler: gcc
