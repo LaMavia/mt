@@ -57,5 +57,5 @@ endif
 # 	sed -f src/Gen_dummy_probes.sed $< >$@
 # endif
 
-# PGXS := $(shell $(PG_CONFIG) --pgxs)
-# include $(PGXS)
+PGXS := $(shell $(PG_CONFIG) --pgxs)
+include $(PGXS)

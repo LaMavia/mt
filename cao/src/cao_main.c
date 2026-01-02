@@ -1,10 +1,11 @@
+#include "./cao.h"
 #include "postgres.h"
 
 #include <limits.h>
 
-#include "utils/guc.h"
-#include "optimizer/paths.h"
 #include "optimizer/geqo.h"
+#include "optimizer/paths.h"
+#include "utils/guc.h"
 
 // #include "saio.h"
 
@@ -34,53 +35,49 @@ PG_MODULE_MAGIC;
 // }
 
 /* Module load */
-void
-_PG_init(void)
-{
-	//  /* Define custom GUC */
-	// DefineCustomBoolVariable("saio", "Use SA for query planning.", NULL,
-	// 						 &enable_saio, true,
-	// 						 PGC_USERSET,
-	// 						 0, SAIO_GUC_HOOK_VALUES);
-	//
-	// DefineCustomRealVariable("saio_seed",
-	// 						 "SA random seed.", NULL,
-	// 						 &saio_seed, 0.0, 0.0, 1.0,
-	// 						 PGC_USERSET,
-	// 						 0, SAIO_GUC_HOOK_VALUES);
-	//
-	// DefineCustomIntVariable("saio_equilibrium_factor",
-	// 						"SA scaling factor for reaching equilibirum.", NULL,
-	// 						&saio_equilibrium_factor, 16, 1, INT_MAX,
-	// 						PGC_USERSET,
-	// 						0, SAIO_GUC_HOOK_VALUES);
-	//
-	// DefineCustomRealVariable("saio_initial_temperature_factor",
-	// 						 "SA scaling factor for initial temperature.", NULL,
-	// 						 &saio_initial_temperature_factor, 2.0, 0.0, 10.0,
-	// 						 PGC_USERSET,
-	// 						 0, SAIO_GUC_HOOK_VALUES);
-	//
-	// DefineCustomRealVariable("saio_temperature_reduction_factor",
-	// 						 "SA temperature reduction factor.", NULL,
-	// 						 &saio_temperature_reduction_factor, 0.9, 0.0, 1.0,
-	// 						 PGC_USERSET,
-	// 						 0, SAIO_GUC_HOOK_VALUES);
-	//
-	// DefineCustomIntVariable("saio_moves_before_frozen",
-	// 						"SA moves before considering system frozen.", NULL,
-	// 						&saio_moves_before_frozen, 4, 1, INT_MAX,
-	// 						PGC_USERSET,
-	// 						0, SAIO_GUC_HOOK_VALUES);
-	// /* Install hook */
-	// prev_join_search_hook = join_search_hook;
-	// join_search_hook = saio_main;
+void _PG_init(void) {
+  //  /* Define custom GUC */
+  // DefineCustomBoolVariable("saio", "Use SA for query planning.", NULL,
+  // 						 &enable_saio, true,
+  // 						 PGC_USERSET,
+  // 						 0, SAIO_GUC_HOOK_VALUES);
+  //
+  // DefineCustomRealVariable("saio_seed",
+  // 						 "SA random seed.", NULL,
+  // 						 &saio_seed, 0.0, 0.0, 1.0,
+  // 						 PGC_USERSET,
+  // 						 0, SAIO_GUC_HOOK_VALUES);
+  //
+  // DefineCustomIntVariable("saio_equilibrium_factor",
+  // 						"SA scaling factor for reaching
+  // equilibirum.", NULL,
+  // &saio_equilibrium_factor, 16, 1, INT_MAX,
+  // PGC_USERSET, 						0, SAIO_GUC_HOOK_VALUES);
+  //
+  // DefineCustomRealVariable("saio_initial_temperature_factor",
+  // 						 "SA scaling factor for initial
+  // temperature.", NULL,
+  // &saio_initial_temperature_factor, 2.0, 0.0, 10.0, 						 PGC_USERSET, 						 0,
+  // SAIO_GUC_HOOK_VALUES);
+  //
+  // DefineCustomRealVariable("saio_temperature_reduction_factor",
+  // 						 "SA temperature reduction
+  // factor.", NULL,
+  // &saio_temperature_reduction_factor, 0.9, 0.0, 1.0, 						 PGC_USERSET, 						 0,
+  // SAIO_GUC_HOOK_VALUES);
+  //
+  // DefineCustomIntVariable("saio_moves_before_frozen",
+  // 						"SA moves before considering
+  // system frozen.", NULL,
+  // &saio_moves_before_frozen, 4, 1, INT_MAX, 						PGC_USERSET, 						0,
+  // SAIO_GUC_HOOK_VALUES);
+  // /* Install hook */
+  // prev_join_search_hook = join_search_hook;
+  // join_search_hook = saio_main;
 }
 
 /* Module unload */
-void
-_PG_fini(void)
-{
-	/* Uninstall hook */
-	// join_search_hook = prev_join_search_hook;
+void _PG_fini(void) {
+  /* Uninstall hook */
+  // join_search_hook = prev_join_search_hook;
 }
