@@ -8,7 +8,6 @@
       pkgs = nixpkgs.legacyPackages.${system};
       llvm = pkgs.llvmPackages_latest;
       lib = nixpkgs.lib;
-      postgres = pkgs.postgresql_18;
     in
     {
       devShell = pkgs.mkShell rec {
@@ -22,7 +21,6 @@
           pkgs.gtest
           pkgs.gnumake
 
-          postgres
           pkgs.libpq
           pkgs.libpq.pg_config
 
