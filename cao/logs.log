@@ -1,0 +1,26 @@
+2026-01-03 03:00:55.975 CET [90083] LOG:  starting PostgreSQL 18.1 on x86_64-pc-linux-gnu, compiled by clang version 20.1.8, 64-bit
+2026-01-03 03:00:55.976 CET [90083] LOG:  listening on IPv6 address "::1", port 5432
+2026-01-03 03:00:55.976 CET [90083] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-01-03 03:00:55.978 CET [90083] LOG:  listening on Unix socket "/run/postgresql/.s.PGSQL.5432"
+2026-01-03 03:00:55.982 CET [90089] LOG:  database system was shut down at 2026-01-03 03:00:35 CET
+2026-01-03 03:00:55.985 CET [90083] LOG:  database system is ready to accept connections
+2026-01-03 03:01:07.076 CET [90083] LOG:  received fast shutdown request
+2026-01-03 03:01:07.078 CET [90083] LOG:  aborting any active transactions
+2026-01-03 03:01:07.079 CET [90083] LOG:  background worker "logical replication launcher" (PID 90092) exited with exit code 1
+2026-01-03 03:01:07.079 CET [90087] LOG:  shutting down
+2026-01-03 03:01:07.081 CET [90087] LOG:  checkpoint starting: shutdown immediate
+2026-01-03 03:01:07.090 CET [90087] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.002 s, total=0.011 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1C1C440, redo lsn=0/1C1C440
+2026-01-03 03:01:07.100 CET [90083] LOG:  database system is shut down
+2026-01-03 03:05:04.823 CET [92450] LOG:  starting PostgreSQL 18.1 on x86_64-pc-linux-gnu, compiled by clang version 20.1.8, 64-bit
+2026-01-03 03:05:04.823 CET [92450] LOG:  listening on IPv6 address "::1", port 5432
+2026-01-03 03:05:04.823 CET [92450] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-01-03 03:05:04.825 CET [92450] LOG:  listening on Unix socket "/run/postgresql/.s.PGSQL.5432"
+2026-01-03 03:05:04.831 CET [92456] LOG:  database system was shut down at 2026-01-03 03:04:56 CET
+2026-01-03 03:05:04.835 CET [92450] LOG:  database system is ready to accept connections
+2026-01-03 03:07:36.507 CET [92450] LOG:  received fast shutdown request
+2026-01-03 03:07:36.509 CET [92450] LOG:  aborting any active transactions
+2026-01-03 03:07:36.511 CET [92450] LOG:  background worker "logical replication launcher" (PID 92459) exited with exit code 1
+2026-01-03 03:07:36.511 CET [92454] LOG:  shutting down
+2026-01-03 03:07:36.512 CET [92454] LOG:  checkpoint starting: shutdown immediate
+2026-01-03 03:07:36.521 CET [92454] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.002 s, total=0.011 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/1C1C568, redo lsn=0/1C1C568
+2026-01-03 03:07:36.532 CET [92450] LOG:  database system is shut down

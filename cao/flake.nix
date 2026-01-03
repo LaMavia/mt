@@ -12,8 +12,8 @@
     {
       packages = {
         default =
-          self.packages.${system}.cao;
-        cao = (pkgs.postgresql_18.withPackages
+          self.packages.${system}.postgres;
+        postgres = (pkgs.postgresql_18.withPackages
           (ps: [
             (ps.callPackage ./cao.nix { })
           ])
@@ -32,12 +32,6 @@
 
           pkgs.libpq
           pkgs.libpq.pg_config
-
-          (pkgs.postgresql_18.withPackages
-            (ps: [
-              (ps.callPackage ./cao.nix { })
-            ])
-          )
         ];
 
         buildInputs = [
@@ -59,6 +53,7 @@
           export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${CPATH}"
           export LIBCLANG_PATH="${pkgs.libclang.lib}/lib";
           export PGDATA=./pg_data 
+          export PATH="./result/bin:$PATH"
         '';
       };
     }
