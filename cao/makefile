@@ -6,7 +6,7 @@ PG_CONFIG    = pg_config
 
 
 MODULE_big = cao
-OBJS = src/cao_main.o
+OBJS = src/cao.o src/cao_main.o 
 
 # make sure
 all: all-lib

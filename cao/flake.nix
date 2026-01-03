@@ -10,6 +10,15 @@
       lib = nixpkgs.lib;
     in
     {
+      packages = {
+        default =
+          self.packages.${system}.cao;
+        cao = (pkgs.postgresql_18.withPackages
+          (ps: [
+            (ps.callPackage ./cao.nix { })
+          ])
+        );
+      };
       devShell = pkgs.mkShell rec {
         nativeBuildInputs = [
           pkgs.cmake
