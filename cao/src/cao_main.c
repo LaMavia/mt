@@ -10,7 +10,7 @@
 PG_MODULE_MAGIC;
 
 /* Module load */
-void _PG_init(void) { elog(INFO, "Hello from CAO!\n"); }
+void _PG_init(void) { elog(INFO, "Hello from CAO!"); }
 
 /* Module unload */
 void _PG_fini(void) {}
